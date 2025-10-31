@@ -753,8 +753,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if(existing.length){ await supabaseClient.storage.from(MEDIA_BUCKET).remove(existing.map(e=>e.path)); }
     }
     for(const f of files){
-      const safe = f.name.replace(/\s+/g,'_');
-      const to = `${path}/${Date.now()}_${safe}`;
+      /* OLD (kept): const safe = f.name.replace(/\s+/g,'_'); const to = `${path}/${Date.now()}_${safe}`; */
+      /* NEW: normalize name + fix .mb4 to .mp4 when MIME indicates MP4 */
+      const safeName = f.name.replace(/\s+/g,'_');
+      const lower = safeName.toLowerCase();
+      let fixed = lower;
+      if (f.type === 'video/mp4' && /\.mb4$/i.test(safeName)) {
+        fixed = lower.replace(/\.mb4$/i, '.mp4');
+      }
+      const to = `${path}/${Date.now()}_${fixed}`;
+
       await supabaseClient.storage.from(MEDIA_BUCKET).upload(to, f, { cacheControl:'3600', upsert:false });
     }
     loadAll();
@@ -773,7 +781,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     container.innerHTML = files.map(f=>{
       const isImg = /\.(png|jpe?g|webp|gif|svg)$/i.test(f.name);
-      const isVid = /\.(mp4|webm|ogg|mov)$/i.test(f.name);
+      /* OLD (kept): const isVid = /\.(mp4|webm|ogg|mov)$/i.test(f.name); */
+      const isVid = /\.(mp4|mb4|m4v|webm|ogg|ogv|mov|3gp|3gpp|mkv|avi|mpeg|mpg)$/i.test(f.name);
 
       if (isImg){
         return `
@@ -799,7 +808,21 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>`;
       }
-      return '';
+
+      /* NEW: fallback card so unknown types still appear */
+      return `
+        <div class="media-card reveal">
+          <div class="media-actions" data-guard>
+            <button class="icon-btn" data-del="${f.path}" title="حذف / Delete"><i class="fa-solid fa-trash"></i></button>
+            <a class="icon-btn" href="${f.url}" download title="تنزيل / Download"><i class="fa-solid fa-download"></i></a>
+          </div>
+          <div class="media-thumb" data-kind="file" style="aspect-ratio:3/2;display:grid;place-items:center;background:#fff">
+            <div style="text-align:center;padding:18px">
+              <i class="fa-solid fa-file" style="font-size:28px;color:#b15b00"></i>
+              <div style="margin-top:8px;font-weight:800;color:#8b4a00;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 8px">${f.name}</div>
+            </div>
+          </div>
+        </div>`;
     }).join('');
 
     container.querySelectorAll('[data-del]').forEach(btn=>{
