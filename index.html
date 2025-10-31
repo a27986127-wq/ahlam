@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>الملف التعريفي | المعلمة أحلام عوض الشيبان</title>
+
+<!-- Fonts + Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+/* ===================== THEME: Soft Sunrise (Light Orange) ===================== */
+:root{
+  --bg:#fffaf4;
+  --card:#ffffff;
+  --ink:#3d2a16;
+  --muted:#7b6553;
+  --brand:#ffe9cf;     /* chips / light fills */
+  --brand-2:#ffd9aa;   /* section marker */
+  --line:#ffe1c4;
+  --accent:#fff3e3;
+  --brand-ink:#b15b00; /* deep orange-brown */
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',sans-serif}
+html{scroll-behavior:smooth}
+a{color:#b15b00;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+
+/* ===================== TOPBAR ===================== */
+.topbar{
+  position:sticky; top:0; z-index:120;
+  background:linear-gradient(180deg, rgba(255,243,227,.78), rgba(255,243,227,.60));
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 6px 20px rgba(177,91,0,.10);
+}
+.topbar .row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 0}
+.brand{
+  display:flex;align-items:center;gap:12px;min-width:0;padding:6px 10px;border-radius:14px;
+  background:linear-gradient(180deg,#fff,#fff8ef);border:1px solid #ffe2c8;box-shadow:0 8px 18px rgba(177,91,0,.10);
+}
+.brand .mark{width:40px;height:40px;border-radius:12px;background:conic-gradient(from 0deg,#ffd9aa,#fff3e3,#ffd9aa);border:1px solid #ffc987;box-shadow:inset 0 0 0 5px rgba(255,255,255,.7)}
+.brand .title{display:flex;flex-direction:column;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand .title b{color:var(--brand-ink);font-weight:800}
+.brand .title small{color:#9a5300;font-weight:700}
+.lang-switch{display:flex;gap:8px;align-items:center}
+.lang-switch button,.login-btn,.nav-btn{
+  background:var(--brand);color:var(--brand-ink);border:1px solid #ffd9aa;border-radius:12px;
+  padding:8px 12px;font-weight:800;cursor:pointer;box-shadow:0 2px 0 #ffc987
+}
+.lang-switch .secondary{background:#fff3e3;color:#8b4a00;border:1px solid var(--line)}
+#sectionsBtn{background:#fff0e0;color:#8b4a00;border:1px solid var(--line)}
+.menu{display:none !important}
+[data-guard]{display:none}
+
+/* Sections quick panel */
+#sectionsPanel{
+  position:fixed;inset-inline-end:16px;top:66px;background:#fff;border:1px solid var(--line);
+  border-radius:14px;box-shadow:0 14px 40px rgba(177,91,0,.12);padding:10px;display:none;z-index:140;max-height:60vh;overflow:auto;min-width:240px
+}
+#sectionsPanel a{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#8b4a00;font-weight:700}
+#sectionsPanel a i{color:#d08122}
+#sectionsPanel a:hover{background:var(--accent)}
+
+/* ===================== HERO (Brand-new + new second box) ===================== */
+.hero{
+  position:relative;isolation:isolate;padding:clamp(28px,5vw,74px) 0 40px;
+  background:
+    radial-gradient(1200px 560px at 85% -20%, #ffd9aa 0%, rgba(255,247,235,0.98) 62%),
+    linear-gradient(135deg,#ffedd3 0%,#ffe1bb 45%,#fff5e6 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero::after{
+  content:"";position:absolute;inset:auto 0 0 0;height:90px;z-index:-1;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="120" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,70 C240,120 480,0 720,60 C960,115 1200,25 1440,70 L1440,120 L0,120 Z" fill="%23ffd9aa"/></svg>') center/cover no-repeat;opacity:.9;
+}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(16px,3vw,28px);align-items:stretch}
+@media (max-width:980px){.hero-inner{grid-template-columns:1fr}}
+
+/* Box 1: Identity card */
+.hero-card{
+  background:linear-gradient(180deg,#ffffff 0%, #fff7ee 100%);
+  border:1px solid var(--line); border-radius:20px; padding:22px;
+  box-shadow:0 16px 44px rgba(177,91,0,.12);
+}
+.hero-title{margin:0 0 6px;font-size:clamp(26px,5vw,42px);color:#8b4a00;font-weight:900}
+.hero-sub{margin:0 0 14px;font-size:clamp(14px,2.2vw,18px);color:#b15b00;font-weight:700}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;background:#fff0e0;border:1px solid #ffd9aa;color:#8b4a00;font-weight:700}
+.badge i{color:#d08122}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  background:var(--brand);color:var(--brand-ink);border:1px solid #ffd2a0;border-radius:12px;
+  padding:10px 14px;font-weight:900;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease
+}
+.btn:hover{background:#ffe9cf;color:#8b4a00;border:1px solid var(--line)}
+.btn.secondary{background:#fff0e0;color:#8b4a00;border:1px solid var(--line)}
+
+/* Box 2: Teaching Map (different style/weight) */
+.hero-map{
+  display:grid;grid-template-rows:auto 1fr;gap:12px;
+  background:#fff; border:1px dashed #ffc987; border-radius:22px; padding:18px;
+  box-shadow:0 22px 50px rgba(223,160,80,.25);
+  transform:rotate(-.2deg);
+}
+.map-head{display:flex;align-items:center;justify-content:space-between}
+.map-head h3{margin:0;color:#8b4a00;font-weight:900}
+.map-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (max-width:560px){.map-grid{grid-template-columns:1fr}}
+.map-tile{
+  background:linear-gradient(180deg,#fffaf2,#fff);
+  border:1px solid #ffe0c6;border-radius:14px;padding:12px 12px 10px;
+  display:flex;gap:10px;align-items:flex-start;box-shadow:0 8px 18px rgba(177,91,0,.10)
+}
+.map-tile i{
+  font-size:18px;color:#b15b00;background:#ffe9cf;border:1px solid #ffd9aa;border-radius:10px;padding:8px;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center
+}
+.map-tile b{color:#8b4a00}
+.map-tile small{display:block;color:#7b6553}
+
+/* ===================== SECTION SHELL ===================== */
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 30px rgba(177,91,0,.08);padding:24px;margin:22px auto;scroll-margin-top:90px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-inline:8px;margin:-4px -6px 12px}
+.section-head .title{margin:0;color:#8b4a00;display:flex;align-items:center;gap:10px;border-inline-start:6px solid var(--brand-2);padding-inline-start:10px}
+.section-head .title i{color:#d08122}
+.section-head .actions{display:flex;gap:8px}
+.btn.icon{width:34px;height:34px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:10px}
+.btn.icon i{font-size:14px}
+.lead{font-size:18px;line-height:1.9}
+
+/* ===================== MEDIA GRID ===================== */
+.media-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+@media (max-width:560px){.media-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}}
+.media-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 6px 18px rgba(177,91,0,.07);overflow:hidden}
+.media-thumb{position:relative;width:100%;background:#000;overflow:hidden}
+.media-thumb[data-kind="image"]{aspect-ratio:3/2}
+.media-thumb[data-kind="video"]{aspect-ratio:16/9}
+.media-thumb img,.media-thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;background:#fff}
+.media-actions{position:absolute;top:8px;inset-inline-end:8px;display:flex;gap:6px;z-index:2}
+.icon-btn{background:rgba(255,255,255,.98);border:1px solid var(--line);border-radius:10px;padding:6px;cursor:pointer}
+
+/* Single-image holders */
+.cv-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.cv-card.pale-glow{
+  background:linear-gradient(180deg,#ffffff,#fff7ef);
+  border-color:#ffe5c8;
+  box-shadow:0 10px 28px rgba(177,91,0,.16),0 1px 0 rgba(255,247,235,.9) inset;
+}
+
+/* ===================== FOOTER ===================== */
+footer{background:#ffe9cf;border-top:1px solid var(--line);text-align:center;padding:18px;color:#8b4a00;font-weight:800}
+footer .en{font-family:'Poppins',sans-serif;font-weight:600;color:#444}
+
+/* ===================== LANGUAGE ===================== */
+.lang-ar [data-en], .lang-en [data-ar]{display:none}
+.lang-en{direction:ltr;font-family:'Poppins',sans-serif}
+.lang-en .section-head .title{border-inline-start:none;border-inline-end:6px solid #ffd9aa;padding-inline-start:0;padding-inline-end:10px}
+
+/* ===================== OVERLAY (Popup Modal) ===================== */
+body.no-scroll{overflow:hidden}
+#overlay{
+  position:fixed;inset:0;background:rgba(61,42,22,.64);
+  display:none;align-items:center;justify-content:center;padding:16px;z-index:150;
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}
+#overlay.show{display:flex;animation:fadeIn .15s ease-out}
+#overlay .win{
+  width:min(980px,96vw);max-height:92vh;background:#fff;border:1px solid var(--line);
+  border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.35);
+  display:flex;flex-direction:column;overflow:hidden;transform:scale(.98);animation:popIn .18s ease-out forwards;
+}
+#overlay .toolbar{
+  position:sticky;top:0;display:flex;align-items:center;gap:8px;justify-content:space-between;
+  padding:8px 10px;background:linear-gradient(180deg,#fff,#fff7ef);border-bottom:1px solid var(--line);z-index:2
+}
+#overlay .toolbar .title{display:flex;align-items:center;gap:10px;font-weight:800;color:#8b4a00;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#overlay .toolbar .actions{display:flex;gap:8px}
+#overlay .toolbar .btnx{
+  background:#fff0e0;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-weight:800;cursor:pointer
+}
+#overlay .toolbar .btnx[data-action="close"]{background:#ffd9aa;color:#6b3c00;border-color:#ffc987}
+#overlay .content{position:relative;overflow:auto;-webkit-overflow-scrolling:touch;background:#000}
+#overlay .content-inner{display:grid;place-items:center;padding:0;margin:0;min-height:60vh}
+#overlay .content img{max-width:100%;height:auto;display:block}
+#overlay .content video{max-width:100%;max-height:84vh;display:block}
+@media (max-width:560px){#overlay .toolbar .btnx{padding:10px 12px}}
+
+/* ===================== MODAL (Auth) ===================== */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:200}
+.modal .panel{background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);padding:20px;min-width:320px;max-width:90vw}
+.modal.show{display:flex}
+.input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+
+/* ===================== SKILLS (new set) ===================== */
+.skills-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.skill{
+  position:relative;background:linear-gradient(180deg,#ffffff 0%, #fff7ef 100%);
+  border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 22px rgba(177,91,0,.08);
+  padding:18px 16px;min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:8px;
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.skill:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(177,91,0,.14);border-color:#ffd9aa;background:linear-gradient(180deg,#ffffff 0%, #ffedd6 100%)}
+.skill i{
+  font-size:20px;color:#b15b00;background:#ffe9cf;border:1px solid #ffd9aa;border-radius:10px;padding:8px;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center
+}
+.skill h4{margin:4px 0 0;font-size:18px;color:#8b4a00;font-weight:800}
+.skill p{margin:0;color:var(--muted);line-height:1.7}
+
+/* ===================== REVEAL ===================== */
+.reveal{opacity:0;transform:translateY(14px) scale(.98);transition:opacity .45s ease, transform .45s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* ===================== RESPONSIVE POLISH ===================== */
+@media (max-width:680px){
+  .topbar .row{grid-template-columns:1fr;row-gap:8px}
+  .lang-switch{justify-content:center;flex-wrap:wrap}
+  .brand{justify-content:center}
+  .hero{padding:24px 0 30px}
+  section{padding:16px;margin:16px auto}
+  .lead{font-size:16px;line-height:1.8}
+}
+section ul{padding-inline-start:1.2em}
+section li{list-style:disc inside;line-height:1.9;overflow-wrap:anywhere}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+
+<body class="lang-ar">
+<!-- ===================== Topbar ===================== -->
+<div class="topbar" role="navigation">
+  <div class="container row">
+    <div class="brand" aria-label="Site brand">
+      <div class="mark" aria-hidden="true"></div>
+      <div class="title">
+        <b data-ar>المعلمة أحلام عوض الشيبان</b>
+        <b data-en>Teacher Ahlam Awad Al-Shayban</b>
+        <small data-ar>الشروق النموذجية</small>
+        <small data-en>Al-Shurouq Model School</small>
+      </div>
+    </div>
+
+    <div></div>
+
+    <div class="lang-switch" aria-label="Language and account">
+      <button id="sectionsBtn" class="nav-btn" aria-haspopup="true" aria-expanded="false">
+        <i class="fa-solid fa-list"></i> <span data-ar>القائمة</span><span data-en>Sections</span>
+      </button>
+      <button class="secondary" id="to-ar" aria-label="Arabic">العربية</button>
+      <button id="to-en" aria-label="English">English</button>
+      <button id="loginBtn" class="login-btn" title="تسجيل الدخول" aria-label="Login"><i class="fa-solid fa-user"></i></button>
+      <button id="logoutBtn" class="login-btn" style="display:none" title="تسجيل الخروج" aria-label="Logout"><i class="fa-solid fa-right-from-bracket"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Sections Panel -->
+<div id="sectionsPanel" aria-label="Sections"></div>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Box 1 -->
+      <div class="hero-card">
+        <h1 class="hero-title" data-ar>المعلمة أحلام عوض الشيبان</h1>
+        <h1 class="hero-title" data-en>Teacher Ahlam Awad Al-Shayban</h1>
+        <h2 class="hero-sub" data-ar>الشروق النموذجية</h2>
+        <h2 class="hero-sub" data-en>Al-Shurouq Model School</h2>
+
+        <div class="hero-badges">
+          <span class="badge"><i class="fa-solid fa-book"></i>
+            <span data-ar>لغة عربية • كفايات لغوية (أول ثانوي)</span>
+            <span data-en>Arabic • Linguistic Proficiency (1st HS)</span></span>
+          <span class="badge"><i class="fa-solid fa-people-roof"></i>
+            <span data-ar>الصف الرابع ابتدائي</span><span data-en>Grade 4</span></span>
+          <span class="badge"><i class="fa-solid fa-graduation-cap"></i>
+            <span data-ar>بكالوريوس لغة عربية</span><span data-en>Baccalaureate in Arabic</span></span>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="#cv" data-ar><i class="fa-solid fa-id-card"></i> السيرة الذاتية</a>
+          <a class="btn" href="#cv" data-en><i class="fa-solid fa-id-card"></i> CV</a>
+          <a class="btn secondary" href="#about" data-ar><i class="fa-solid fa-book-open"></i> نبذة</a>
+          <a class="btn secondary" href="#about" data-en><i class="fa-solid fa-book-open"></i> About</a>
+        </div>
+      </div>
+
+      <!-- Box 2: Teaching Map (new style/weight) -->
+      <aside class="hero-map" aria-label="Teaching Map">
+        <div class="map-head">
+          <h3 data-ar>خريطة التدريس</h3><h3 data-en>Teaching Map</h3>
+          <i class="fa-solid fa-diagram-project" style="color:#d08122"></i>
+        </div>
+        <div class="map-grid">
+          <div class="map-tile"><i class="fa-solid fa-language"></i>
+            <div><b data-ar>اللغة العربية</b><b data-en>Arabic</b>
+              <small data-ar>الصف الرابع + الكفايات اللغوية (أول ثانوي)</small>
+              <small data-en>Grade 4 + Linguistic Proficiency (1st HS)</small></div>
+          </div>
+          <div class="map-tile"><i class="fa-solid fa-earth-asia"></i>
+            <div><b data-ar>الدراسات الاجتماعية</b><b data-en>Social Studies</b>
+              <small data-ar>للصف الرابع</small><small data-en>Grade 4</small></div>
+          </div>
+          <div class="map-tile"><i class="fa-solid fa-palette"></i>
+            <div><b data-ar>التربية الفنية</b><b data-en>Art Education</b>
+              <small data-ar>للصف الرابع</small><small data-en>Grade 4</small></div>
+          </div>
+          <div class="map-tile"><i class="fa-solid fa-heart"></i>
+            <div><b data-ar>المهارات الحياتية والأسرية</b><b data-en>Life Skills & Home</b>
+              <small data-ar>للصف الرابع</small><small data-en>Grade 4</small></div>
+          </div>
+          <div class="map-tile"><i class="fa-solid fa-quran"></i>
+            <div><b data-ar>القرآن الكريم والدراسات الإسلامية</b><b data-en>Qur’an & Islamic Studies</b>
+              <small data-ar>للصف الرابع</small><small data-en>Grade 4</small></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MAIN ===================== -->
+<main class="container">
+
+<!-- ===== About ===== -->
+<section id="about" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-book-open"></i><span data-ar>نبذة تعريفية</span><span data-en>About</span></h3>
+  </div>
+  <p class="lead" data-ar>
+    معلّمة لغة عربية ومقررات للصف الرابع ابتدائي (اللغة العربية، الدراسات الاجتماعية، التربية الفنية،
+    المهارات الحياتية والأسرية، القرآن الكريم والدراسات الإسلامية)، وأُدرّس الكفايات اللغوية للسنة الأولى ثانوي.
+  </p>
+  <p class="lead" data-en>
+    Teacher for Grade-4 subjects (Arabic, Social Studies, Art, Life & Home, Qur’an & Islamic Studies) and
+    Linguistic Proficiency for 1st-year High School.
+  </p>
+</section>
+
+<!-- ===== Introduction ===== -->
+<section id="intro" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-paragraph"></i><span data-ar>المقدمة</span><span data-en>Introduction</span></h3>
+  </div>
+  <p class="lead" data-ar>
+    هذا الملف يعرض ممارساتي التعليمية وشواهد الدروس، ويدمج وسائط توضيحية وخطط فصلية مبنية على تحليل أداء الطلبة.
+  </p>
+  <p class="lead" data-en>
+    This portfolio highlights my classroom practices, media evidence, and term plans driven by student performance data.
+  </p>
+</section>
+
+<!-- ===== Vision 2030 ===== -->
+<section id="vision" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-eye"></i><span data-ar>الرؤية – تماشيًا مع رؤية السعودية 2030</span><span data-en>Vision – Aligned with Saudi Vision 2030</span></h3>
+  </div>
+  <p class="lead" data-ar>
+    ترسيخ الاعتزاز بالهوية واللغة العربية، وبناء متعلم متمكن بمهارات القرن الحادي والعشرين عبر تعلم تفاعلي وتقويم بنائي مستمر.
+  </p>
+  <p class="lead" data-en>
+    Nurture identity and Arabic pride, building 21st-century skills through active learning and continuous formative assessment.
+  </p>
+</section>
+
+<!-- ===== Mission ===== -->
+<section id="mission" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-bullseye"></i><span data-ar>الرسالة</span><span data-en>Mission</span></h3>
+  </div>
+  <p class="lead" data-ar>
+    تمكين المتعلمين من اللغة والتفكير المنظم والمهارات الحياتية، مع مراعاة الفروق الفردية وشراكة فاعلة مع الأسرة والمدرسة.
+  </p>
+  <p class="lead" data-en>
+    Empower learners in language, structured thinking, and life skills with differentiation and strong family-school partnership.
+  </p>
+</section>
+
+<!-- ===== Saudi Education Goals ===== -->
+<section id="ksa-goals" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-flag"></i><span data-ar>أهداف التعليم في السعودية</span><span data-en>Saudi Education Goals</span></h3>
+  </div>
+  <ul>
+    <li data-ar>اللغة والهوية والقيم.</li>
+    <li data-ar>إتقان مبكر للقراءة والكتابة والحساب.</li>
+    <li data-ar>بيئات تعلم آمنة وشراكة أسرة-مدرسة.</li>
+    <li data-ar>بيانات أداء وتقويم بنائي لتحسين النواتج.</li>
+  </ul>
+</section>
+
+<!-- ===== Professional Ethics (Expanded) ===== -->
+<section id="ethics" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-scale-balanced"></i><span data-ar>الميثاق المهني والقيم والمسؤوليات</span><span data-en>Professional Charter: Values & Duties</span></h3>
+  </div>
+
+  <div class="cv-card pale-glow">
+    <h4 data-ar>رسالتي المهنية</h4><h4 data-en>My Professional Message</h4>
+    <ul>
+      <li data-ar>صناعة تعلم لغوي جذّاب وداعم يرفع دافعية الطالب ويجعل العربية جزءًا من حياته اليومية.</li>
+      <li data-en>Create engaging, supportive Arabic learning that motivates students and connects to daily life.</li>
+    </ul>
+  </div>
+
+  <div class="cv-card pale-glow">
+    <h4 data-ar>القيم المهنية</h4><h4 data-en>Core Values</h4>
+    <ul>
+      <li data-ar>الإخلاص والنزاهة والقدوة الحسنة.</li>
+      <li data-ar>الاحترام والرحمة والعدالة ومراعاة الفروق الفردية.</li>
+      <li data-ar>السلامة الرقمية وصون الخصوصية والملكية الفكرية.</li>
+    </ul>
+  </div>
+
+  <div class="cv-card pale-glow">
+    <h4 data-ar>مسؤوليتي تجاه الطلبة</h4><h4 data-en>Responsibility to Students</h4>
+    <ul>
+      <li data-ar>بيئة آمنة ومحفّزة وتمكين الصوت الطلابي.</li>
+      <li data-ar>تمايز في الأنشطة، خطط علاجية ودعم للمتعثرين والمتفوقين.</li>
+      <li data-ar>تقويم بنائي شفاف وربط التعلم بواقع الطالب.</li>
+    </ul>
+  </div>
+
+  <div class="cv-card pale-glow">
+    <h4 data-ar>مسؤوليتي تجاه الأسرة والمدرسة</h4><h4 data-en>Duties to Family & School</h4>
+    <ul>
+      <li data-ar>تواصل مهني منتظم وتغذية راجعة بنّاءة.</li>
+      <li data-ar>شراكة في اتخاذ القرارات التعليمية المبنية على البيانات.</li>
+    </ul>
+  </div>
+
+  <div class="cv-card pale-glow">
+    <h4 data-ar>مسؤوليتي تجاه المجتمع والهوية</h4><h4 data-en>Duty to Community & Identity</h4>
+    <ul>
+      <li data-ar>تعزيز الانتماء واللغة العربية والاعتزاز بالقيم الوطنية.</li>
+      <li data-ar>المبادرات والأنشطة التي تخدم المجتمع المدرسي.</li>
+    </ul>
+  </div>
+
+  <div class="cv-card pale-glow">
+    <h4 data-ar>ضمان الجودة والتطوير المهني</h4><h4 data-en>Quality & Professional Growth</h4>
+    <ul>
+      <li data-ar>تحليل نتائج التعلم وتحسين الدروس وفق الأدلة.</li>
+      <li data-ar>تطوير مهني مستمر وتبادل خبرات مع الزملاء.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== CV (single photo) ===== -->
+<section id="cv" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-id-card"></i><span data-ar>السيرة الذاتية (صورة)</span><span data-en>Curriculum Vitae (Image)</span></h3>
+    <div class="actions" data-guard>
+      <label for="cvInput" class="btn icon" title="رفع صورة السيرة الذاتية"><i class="fa-solid fa-image"></i></label>
+      <input id="cvInput" type="file" accept="image/*" hidden>
+    </div>
+  </div>
+  <div id="cvHolder" class="cv-card pale-glow" style="padding:0;overflow:hidden">
+    <div style="aspect-ratio:3/4;background:#ffedd6;display:grid;place-items:center;color:#8b4a00;font-weight:800">
+      <span data-ar>ارفعِي صورة السيرة الذاتية</span><span data-en>Upload your CV image</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Worksheets (images) ===== -->
+<section id="worksheets" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-file-pen"></i><span data-ar>أوراق العمل</span><span data-en>Worksheets</span></h3>
+    <div class="actions" data-guard>
+      <label for="wsInput" class="btn icon" title="رفع صور"><i class="fa-solid fa-upload"></i></label>
+      <input id="wsInput" type="file" multiple accept="image/*" hidden>
+    </div>
+  </div>
+  <div class="media-grid" id="wsGrid"></div>
+</section>
+
+<!-- ===== Exams (images) ===== -->
+<section id="exams" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-file-circle-check"></i><span data-ar>الاختبارات</span><span data-en>Exams</span></h3>
+    <div class="actions" data-guard>
+      <label for="exInput" class="btn icon" title="رفع صور"><i class="fa-solid fa-upload"></i></label>
+      <input id="exInput" type="file" multiple accept="image/*" hidden>
+    </div>
+  </div>
+  <div class="media-grid" id="exGrid"></div>
+</section>
+
+<!-- ===== Teaching Strategy (videos) ===== -->
+<section id="strategy-media" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-lightbulb"></i><span data-ar>استراتيجيات التدريس (فيديو)</span><span data-en>Teaching Strategy (Videos)</span></h3>
+    <div class="actions" data-guard>
+      <label for="stratInput" class="btn icon" title="رفع فيديوهات"><i class="fa-solid fa-video"></i></label>
+      <input id="stratInput" type="file" multiple accept="video/*" hidden>
+    </div>
+  </div>
+  <div class="media-grid" id="stratGrid"></div>
+</section>
+
+<!-- ===== School Schedule (single image) ===== -->
+<section id="schedule" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-calendar-days"></i><span data-ar>الجدول الدراسي</span><span data-en>School Schedule</span></h3>
+    <div class="actions" data-guard>
+      <label for="schInput" class="btn icon" title="رفع صورة الجدول"><i class="fa-solid fa-image"></i></label>
+      <input id="schInput" type="file" accept="image/*" hidden>
+    </div>
+  </div>
+  <div id="schHolder" class="cv-card pale-glow" style="padding:0;overflow:hidden">
+    <div style="aspect-ratio:3/2;background:#ffedd6;display:grid;place-items:center;color:#8b4a00;font-weight:800">
+      <span data-ar>ارفعِي صورة الجدول</span><span data-en>Upload the schedule image</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Semester Plan (single image) ===== -->
+<section id="plan" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-diagram-project"></i><span data-ar>توزيع المناهج (الفصل)</span><span data-en>Semester Plan (Subjects)</span></h3>
+    <div class="actions" data-guard>
+      <label for="planInput" class="btn icon" title="رفع صورة التوزيع"><i class="fa-solid fa-image"></i></label>
+      <input id="planInput" type="file" accept="image/*" hidden>
+    </div>
+  </div>
+  <div id="planHolder" class="cv-card pale-glow" style="padding:0;overflow:hidden">
+    <div style="aspect-ratio:3/4;background:#ffedd6;display:grid;place-items:center;color:#8b4a00;font-weight:800">
+      <span data-ar>ارفعِي صورة توزيع المناهج</span><span data-en>Upload the plan image</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== School Activities (images) ===== -->
+<section id="activities" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-layer-group"></i><span data-ar>الأنشطة المدرسية</span><span data-en>School Activities</span></h3>
+    <div class="actions" data-guard>
+      <label for="actsInput" class="btn icon" title="رفع صور"><i class="fa-solid fa-upload"></i></label>
+      <input id="actsInput" type="file" multiple accept="image/*" hidden>
+    </div>
+  </div>
+  <div class="media-grid" id="actsGrid"></div>
+</section>
+
+<!-- ===== School Broadcast (videos) ===== -->
+<section id="ithaa" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-broadcast-tower"></i><span data-ar>الإذاعة المدرسية</span><span data-en>School Broadcast</span></h3>
+    <div class="actions" data-guard>
+      <label for="ithaaInput" class="btn icon" title="رفع فيديوهات"><i class="fa-solid fa-video"></i></label>
+      <input id="ithaaInput" type="file" multiple accept="video/*" hidden>
+    </div>
+  </div>
+  <div class="media-grid" id="ithaaGrid"></div>
+</section>
+
+<!-- ===== New Skills & Strategies (replaced content) ===== -->
+<section id="skills" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-chalkboard-user"></i><span data-ar>مهارات واستراتيجيات التدريس</span><span data-en>Teaching Skills & Strategies</span></h3>
+  </div>
+  <div class="skills-grid">
+    <div class="skill"><i class="fa-solid fa-person-chalkboard"></i><h4 data-ar>الإطلاق المتدرّج (أنا–نحن–أنتِ)</h4><h4 data-en>Gradual Release (I–We–You)</h4><p data-ar>نموذج واضح للتدرّج من التوجيه إلى الاستقلال.</p><p data-en>Shift from modeling to independence.</p></div>
+    <div class="skill"><i class="fa-solid fa-comments"></i><h4 data-ar>فكّر–تشارك–شارك</h4><h4 data-en>Think–Pair–Share</h4><p data-ar>رفع المشاركة وبناء الثقة اللغوية.</p><p data-en>Boost participation & fluency.</p></div>
+    <div class="skill"><i class="fa-solid fa-shapes"></i><h4 data-ar>الترميز المزدوج</h4><h4 data-en>Dual Coding</h4><p data-ar>دمج نصوص مع مخططات وصور لتثبيت التعلم.</p><p data-en>Combine text with visuals.</p></div>
+    <div class="skill"><i class="fa-solid fa-rotate"></i><h4 data-ar>التعلّم بالمحطات</h4><h4 data-en>Station Rotation</h4><p data-ar>تمايز مهام القراءة/الكتابة/الاستماع.</p><p data-en>Differentiated literacy stations.</p></div>
+    <div class="skill"><i class="fa-solid fa-hourglass-half"></i><h4 data-ar>الاسترجاع المتباعد</h4><h4 data-en>Spaced Retrieval</h4><p data-ar>مراجعات قصيرة زمنية لثبات المفاهيم.</p><p data-en>Short, spaced review cycles.</p></div>
+    <div class="skill"><i class="fa-solid fa-clipboard-check"></i><h4 data-ar>روبركات شفافة</h4><h4 data-en>Transparent Rubrics</h4><p data-ar>معايير صريحة للفهم والكتابة والتعبير.</p><p data-en>Clear criteria for mastery.</p></div>
+    <div class="skill"><i class="fa-solid fa-layer-group"></i><h4 data-ar>التكليفات المتدرجة</h4><h4 data-en>Tiered Tasks</h4><p data-ar>تدرّج صعوبة يدعم جميع المستويات.</p><p data-en>Scaffolded challenge levels.</p></div>
+    <div class="skill"><i class="fa-solid fa-chart-line"></i><h4 data-ar>تحليلات بنائية</h4><h4 data-en>Formative Analytics</h4><p data-ar>قرارات تعليمية مدفوعة بالبيانات الصفية.</p><p data-en>Data-informed adjustments.</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div data-ar>© جميع الحقوق محفوظة | المعلمة أحلام عوض الشيبان</div>
+    <div data-en class="en">© All rights reserved | Teacher Ahlam</div>
+  </div>
+</footer>
+
+<!-- Lightbox overlay -->
+<div id="overlay" role="dialog" aria-modal="true" aria-label="Viewer"></div>
+
+<!-- ===== Auth Modal ===== -->
+<div id="authModal" class="modal" aria-hidden="true">
+  <div class="panel">
+    <h3 style="margin-top:0;color:#8b4a00" data-ar>تسجيل الدخول</h3>
+    <h3 style="margin-top:0;color:#8b4a00" data-en>Sign in</h3>
+    <input id="emailInput" type="email" class="input" placeholder="email@example.com" style="margin-bottom:8px" autocomplete="username">
+    <input id="passwordInput" type="password" class="input" placeholder="password" style="margin-bottom:8px" autocomplete="current-password">
+    <div class="cta" style="margin-top:12px">
+      <button id="signInBtn" class="btn" data-ar>تسجيل الدخول</button>
+      <button id="signInBtn_en" class="btn" data-en>Sign in</button>
+      <button id="closeAuth" class="btn secondary" data-ar>إغلاق</button>
+      <button id="closeAuth_en" class="btn secondary" data-en>Close</button>
+    </div>
+    <p id="authMsg" class="note" style="margin-top:10px;color:#8b4a00;font-weight:700"></p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* ===== Language Toggle ===== */
+  const root = document.body;
+  document.getElementById('to-ar').onclick = ()=>{ root.classList.add('lang-ar'); root.classList.remove('lang-en'); };
+  document.getElementById('to-en').onclick = ()=>{ root.classList.add('lang-en'); root.classList.remove('lang-ar'); };
+
+  /* ===== Sections dropdown ===== */
+  const sectionsPanel = document.getElementById('sectionsPanel');
+  const sectionsBtn = document.getElementById('sectionsBtn');
+  const SECTIONS = [
+    ['about','fa-book-open','نبذة','About'],
+    ['intro','fa-paragraph','المقدمة','Introduction'],
+    ['vision','fa-eye','الرؤية 2030','Vision'],
+    ['mission','fa-bullseye','الرسالة','Mission'],
+    ['ksa-goals','fa-flag','أهداف التعليم','KSA Goals'],
+    ['ethics','fa-scale-balanced','الميثاق المهني','Ethics'],
+    ['cv','fa-id-card','السيرة','CV'],
+    ['worksheets','fa-file-pen','أوراق العمل','Worksheets'],
+    ['exams','fa-file-circle-check','الاختبارات','Exams'],
+    ['strategy-media','fa-lightbulb','استراتيجيات (فيديو)','Strategies'],
+    ['schedule','fa-calendar-days','الجدول','Schedule'],
+    ['plan','fa-diagram-project','توزيع المناهج','Plan'],
+    ['activities','fa-layer-group','الأنشطة','Activities'],
+    ['ithaa','fa-broadcast-tower','الإذاعة','Broadcast'],
+    ['skills','fa-chalkboard-user','مهارات','Skills']
+  ];
+  sectionsPanel.innerHTML = SECTIONS
+    .map(([id,icon,ar,en])=>`<a href="#${id}"><i class="fa-solid ${icon}"></i><span data-ar>${ar}</span><span data-en>${en}</span></a>`)
+    .join('');
+  sectionsPanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault(); sectionsPanel.style.display='none'; sectionsBtn.setAttribute('aria-expanded','false');
+    document.getElementById(a.getAttribute('href').slice(1)).scrollIntoView({behavior:'smooth'});
+  }));
+  sectionsBtn.onclick = ()=>{
+    const show = sectionsPanel.style.display!=='block';
+    sectionsPanel.style.display = show ? 'block' : 'none';
+    sectionsBtn.setAttribute('aria-expanded', show ? 'true' : 'false');
+  };
+
+  /* ===== Overlay / Viewer ===== */
+  const overlay = document.getElementById('overlay');
+  function lockBody(lock){ document.body.classList.toggle('no-scroll', !!lock); }
+  function buildWindow({ title, icon = 'fa-rectangle-list', actions = [] }){
+    overlay.innerHTML = `
+      <div class="win" role="document">
+        <div class="toolbar">
+          <div class="title">
+            <i class="fa-solid ${icon}"></i>
+            <span title="${title || ''}">${title || ''}</span>
+          </div>
+          <div class="actions">
+            ${actions.map(a =>
+              a.href
+                ? `<a class="btnx" ${a.download ? 'download' : ''} href="${a.href}" target="${a.target || '_self'}" rel="${a.rel || 'noopener'}" title="${a.label}">${a.label}</a>`
+                : `<button class="btnx" data-action="${a.action}" title="${a.label}">${a.label}</button>`
+            ).join('')}
+            <button class="btnx" data-action="close" aria-label="Close">✕ إغلاق</button>
+          </div>
+        </div>
+        <div class="content"><div class="content-inner"></div></div>
+      </div>`;
+    overlay.querySelector('[data-action="close"]').addEventListener('click', closeOverlay);
+    const onBackdrop = (e)=>{ if (e.target === overlay) closeOverlay(); };
+    overlay.addEventListener('click', onBackdrop, { once:true });
+    return { content: overlay.querySelector('.content-inner') };
+  }
+  function showOverlay(){ overlay.classList.add('show'); lockBody(true); }
+  function closeOverlay(){ overlay.classList.remove('show'); overlay.innerHTML=''; lockBody(false); }
+  window.closeOverlay = closeOverlay;
+
+  function openImage(src,name=''){
+    overlay.innerHTML=''; const actions=[{href:src,label:'Download',download:true},{href:src,label:'Open tab',target:'_blank',rel:'noopener'}];
+    const { content } = buildWindow({ title:name||'Image', icon:'fa-image', actions });
+    const img=new Image(); img.src=src; img.alt=name||'image'; img.style.maxHeight='84vh'; content.appendChild(img); showOverlay();
+  }
+  function openVideo(src,name=''){
+    overlay.innerHTML=''; const actions=[{href:src,label:'Download',download:true},{href:src,label:'Open tab',target:'_blank',rel:'noopener'}];
+    const { content } = buildWindow({ title:name||'Video', icon:'fa-film', actions });
+    const v=document.createElement('video'); v.src=src; v.controls=true; v.playsInline=true; v.autoplay=true; v.style.maxHeight='84vh'; content.appendChild(v); showOverlay();
+  }
+  window.openImage = openImage; window.openVideo = openVideo;
+
+  /* ===== Reveal on scroll ===== */
+  const io = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if (en.isIntersecting){ en.target.classList.add('show'); io.unobserve(en.target); } }); }, { threshold:.12 });
+  document.querySelectorAll('.reveal, .media-card, .skill').forEach(el=>io.observe(el));
+
+  /* ===== Auth Modal ===== */
+  const authModal = document.getElementById('authModal');
+  const emailInput = document.getElementById('emailInput');
+  const passwordInput = document.getElementById('passwordInput');
+  const msg = document.getElementById('authMsg');
+  const showAuth = show => { authModal.classList.toggle('show', !!show); authModal.setAttribute('aria-hidden', show ? 'false' : 'true'); };
+  const setMsg = t => { msg.textContent = t || ''; };
+  function setGuardVisible(isAuthed){
+    document.querySelectorAll('[data-guard]').forEach(el=>{ el.style.display = isAuthed ? 'flex' : 'none'; });
+    document.getElementById('logoutBtn').style.display = isAuthed ? 'inline-block' : 'none';
+  }
+  document.getElementById('loginBtn').onclick = ()=> showAuth(true);
+  document.getElementById('closeAuth').onclick = document.getElementById('closeAuth_en').onclick = ()=> showAuth(false);
+
+  /* ===== Supabase Setup ===== */
+  const SUPABASE_URL = 'https://rybnwogxpgcdjxczzrfu.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5Ym53b2d4cGdjZGp4Y3p6cmZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MzA1OTgsImV4cCI6MjA3NzUwNjU5OH0.vMy8klZ1rre7NcKuF4b9besT3Rf2_U2OZP1q7cLDPjo';
+  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const MEDIA_BUCKET = 'mida';
+  const BASE = 'ahlam'; // profile namespace
+  const PATH = {
+    CV:   `${BASE}/cv`,
+    WS:   `${BASE}/worksheets`,
+    EX:   `${BASE}/exams`,
+    STR:  `${BASE}/strategy`,
+    SCH:  `${BASE}/schedule`,
+    PLAN: `${BASE}/plan`,
+    ACT:  `${BASE}/activities`,
+    ITH:  `${BASE}/ithaa`
+  };
+
+  async function getUser(){ const { data } = await supabaseClient.auth.getUser(); return data?.user ?? null; }
+  function requireUser(user){ if(!user){ showAuth(true); return false; } return true; }
+
+  document.getElementById('signInBtn').onclick = document.getElementById('signInBtn_en').onclick = async ()=>{
+    const email=(emailInput.value||'').trim(); const password=(passwordInput.value||'').trim();
+    if(!email||!password){ setMsg('أدخلي الإيميل وكلمة المرور / Enter email & password'); return; }
+    const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    if(error){ setMsg('خطأ: ' + error.message); return; }
+    setMsg('تم تسجيل الدخول ✓'); showAuth(false);
+    const user = await getUser(); setGuardVisible(!!user);
+  };
+  document.getElementById('logoutBtn').onclick = async ()=>{ await supabaseClient.auth.signOut(); setMsg('تم تسجيل الخروج'); setGuardVisible(false); };
+
+  const publicUrl = path => supabaseClient.storage.from(MEDIA_BUCKET).getPublicUrl(path).data.publicUrl;
+
+  /* ===== Storage helpers ===== */
+  async function listAt(path){
+    const { data } = await supabaseClient.storage.from(MEDIA_BUCKET)
+      .list(path, { limit:200, sortBy:{column:'created_at', order:'desc'} });
+    return (data||[]).map(it=>({ name: it.name, path: `${path}/${it.name}`, url: publicUrl(`${path}/${it.name}`) }));
+  }
+  async function uploadManyAt(path, files, single=false){
+    const user = await getUser(); if(!requireUser(user)) return;
+    if(single){
+      // Keep latest only for single-image sections
+      const existing = await listAt(path);
+      if(existing.length){ await supabaseClient.storage.from(MEDIA_BUCKET).remove(existing.map(e=>e.path)); }
+    }
+    for(const f of files){
+      const safe = f.name.replace(/\s+/g,'_');
+      const to = `${path}/${Date.now()}_${safe}`;
+      await supabaseClient.storage.from(MEDIA_BUCKET).upload(to, f, { cacheControl:'3600', upsert:false });
+    }
+    loadAll();
+  }
+  async function removeFile(path){
+    const user = await getUser(); if(!requireUser(user)) return;
+    await supabaseClient.storage.from(MEDIA_BUCKET).remove([path]);
+    loadAll();
+  }
+
+  /* ===== Renderers ===== */
+  function renderMixedGrid(container, files){
+    if (!files.length){
+      container.innerHTML = '<p style="grid-column:1/-1;color:#7b6553;margin:6px 2px">لا توجد عناصر حتى الآن.<span data-en> No items yet.</span></p>';
+      return;
+    }
+    container.innerHTML = files.map(f=>{
+      const isImg = /\.(png|jpe?g|webp|gif|svg)$/i.test(f.name);
+      const isVid = /\.(mp4|webm|ogg|mov)$/i.test(f.name);
+
+      if (isImg){
+        return `
+          <div class="media-card reveal">
+            <div class="media-actions" data-guard>
+              <button class="icon-btn" data-del="${f.path}" title="حذف / Delete"><i class="fa-solid fa-trash"></i></button>
+              <a class="icon-btn" href="${f.url}" download title="تنزيل / Download"><i class="fa-solid fa-download"></i></a>
+            </div>
+            <div class="media-thumb" data-kind="image">
+              <img loading="lazy" src="${f.url}" alt="${f.name}" onclick="openImage('${f.url}','${f.name}')">
+            </div>
+          </div>`;
+      }
+      if (isVid){
+        return `
+          <div class="media-card reveal">
+            <div class="media-actions" data-guard>
+              <button class="icon-btn" data-del="${f.path}" title="حذف / Delete"><i class="fa-solid fa-trash"></i></button>
+              <a class="icon-btn" href="${f.url}" download title="تنزيل / Download"><i class="fa-solid fa-download"></i></a>
+            </div>
+            <div class="media-thumb" data-kind="video" onclick="openVideo('${f.url}')">
+              <video src="${f.url}" muted playsinline preload="metadata"></video>
+            </div>
+          </div>`;
+      }
+      return '';
+    }).join('');
+
+    container.querySelectorAll('[data-del]').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{ e.stopPropagation(); const path = btn.dataset.del;
+        if (confirm('هل تريدين حذف هذا الملف؟ / Delete this file?')) removeFile(path);
+      });
+    });
+
+    container.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }
+
+  function renderSingleImage(holderEl, files, emptyTextAr, emptyTextEn, aspect='3/4'){
+    holderEl.innerHTML = '';
+    if(!files.length){
+      holderEl.innerHTML = `<div style="aspect-ratio:${aspect};background:#ffedd6;display:grid;place-items:center;color:#8b4a00;font-weight:800">
+        <span data-ar>${emptyTextAr}</span><span data-en>${emptyTextEn}</span></div>`;
+      return;
+    }
+    const f = files[0]; const url = f.url;
+    const block = document.createElement('div');
+    block.style.position='relative';
+    block.innerHTML = `
+      <div class="media-actions" data-guard style="position:absolute;top:8px;inset-inline-end:8px;display:flex;gap:6px;z-index:2">
+        <button class="icon-btn" data-del="${f.path}" title="حذف / Delete"><i class="fa-solid fa-trash"></i></button>
+        <a class="icon-btn" href="${url}" download title="تنزيل / Download"><i class="fa-solid fa-download"></i></a>
+      </div>
+      <div class="media-thumb" data-kind="image" style="aspect-ratio:${aspect}">
+        <img src="${url}" alt="${f.name}" onclick="openImage('${url}','${f.name}')">
+      </div>`;
+    holderEl.appendChild(block);
+    block.querySelector('[data-del]').addEventListener('click', ()=>{ if(confirm('Delete this image?')) removeFile(f.path); });
+  }
+
+  /* ===== Bindings ===== */
+  const wsGrid = document.getElementById('wsGrid');
+  const exGrid = document.getElementById('exGrid');
+  const stratGrid = document.getElementById('stratGrid');
+  const actsGrid  = document.getElementById('actsGrid');
+  const ithaaGrid = document.getElementById('ithaaGrid');
+  const cvHolder  = document.getElementById('cvHolder');
+  const schHolder = document.getElementById('schHolder');
+  const planHolder= document.getElementById('planHolder');
+
+  document.getElementById('wsInput') ?.addEventListener('change', e=>uploadManyAt(PATH.WS , e.target.files));
+  document.getElementById('exInput') ?.addEventListener('change', e=>uploadManyAt(PATH.EX , e.target.files));
+  document.getElementById('stratInput')?.addEventListener('change', e=>uploadManyAt(PATH.STR, e.target.files));
+  document.getElementById('actsInput') ?.addEventListener('change', e=>uploadManyAt(PATH.ACT, e.target.files));
+  document.getElementById('ithaaInput')?.addEventListener('change', e=>uploadManyAt(PATH.ITH, e.target.files));
+  document.getElementById('cvInput')   ?.addEventListener('change', e=>uploadManyAt(PATH.CV , e.target.files, true));
+  document.getElementById('schInput')  ?.addEventListener('change', e=>uploadManyAt(PATH.SCH, e.target.files, true));
+  document.getElementById('planInput') ?.addEventListener('change', e=>uploadManyAt(PATH.PLAN,e.target.files, true));
+
+  async function loadAll(){
+    const [ws, ex, strat, acts, ithaa, cv, sch, plan, user] = await Promise.all([
+      listAt(PATH.WS), listAt(PATH.EX), listAt(PATH.STR), listAt(PATH.ACT), listAt(PATH.ITH),
+      listAt(PATH.CV), listAt(PATH.SCH), listAt(PATH.PLAN), getUser()
+    ]);
+    renderMixedGrid(wsGrid, ws);
+    renderMixedGrid(exGrid, ex);
+    renderMixedGrid(stratGrid, strat);
+    renderMixedGrid(actsGrid, acts);
+    renderMixedGrid(ithaaGrid, ithaa);
+    renderSingleImage(cvHolder, cv, 'ارفعِي صورة السيرة الذاتية', 'Upload your CV image', '3/4');
+    renderSingleImage(schHolder, sch, 'ارفعِي صورة الجدول', 'Upload the schedule image', '3/2');
+    renderSingleImage(planHolder, plan, 'ارفعِي صورة توزيع المناهج', 'Upload the plan image', '3/4');
+    setGuardVisible(!!user);
+  }
+  supabaseClient.auth.onAuthStateChange(async ()=>{ loadAll(); });
+  loadAll();
+});
+</script>
+</body>
+</html>
