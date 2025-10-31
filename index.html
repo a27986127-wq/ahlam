@@ -519,22 +519,7 @@ section li{list-style:disc inside;line-height:1.9;overflow-wrap:anywhere}
   </div>
 </section>
 
-<!-- ===== Semester Plan (single image) ===== 
-<section id="plan" class="reveal">
-  <div class="section-head">
-    <h3 class="title"><i class="fa-solid fa-diagram-project"></i><span data-ar>توزيع المناهج (الفصل)</span><span data-en>Semester Plan (Subjects)</span></h3>
-    <div class="actions" data-guard>
-      <label for="planInput" class="btn icon" title="رفع صورة التوزيع"><i class="fa-solid fa-image"></i></label>
-      <input id="planInput" type="file" accept="image/*" hidden>
-    </div>
-  </div>
-  <div id="planHolder" class="cv-card pale-glow" style="padding:0;overflow:hidden">
-    <div style="aspect-ratio:3/4;background:#ffedd6;display:grid;place-items:center;color:#8b4a00;font-weight:800">
-      <span data-ar>ارفعِي صورة توزيع المناهج</span><span data-en>Upload the plan image</span>
-    </div>
-  </div>
-</section>-->
-  <!-- ===== Semester Plan (MULTI images) ===== -->
+<!-- ===== Semester Plan (MULTI images) ===== -->
 <section id="plan" class="reveal">
   <div class="section-head">
     <h3 class="title"><i class="fa-solid fa-diagram-project"></i><span data-ar>توزيع المناهج (صور متعددة)</span><span data-en>Semester Plan (Multiple Images)</span></h3>
@@ -852,7 +837,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const ithaaGrid = document.getElementById('ithaaGrid');
   const cvHolder  = document.getElementById('cvHolder');
   const schHolder = document.getElementById('schHolder');
-  const planHolder= document.getElementById('planHolder');
+
+  /* FIX: missing reference to #planGrid caused error; add it */
+  const planGrid  = document.getElementById('planGrid'); /* FIX: added */
+
+  /* NOTE: planHolder existed before when plan was single image; keeping the constant commented for clarity */
+  // const planHolder= document.getElementById('planHolder'); /* FIX: not used with multi images */
 
   document.getElementById('wsInput') ?.addEventListener('change', e=>uploadManyAt(PATH.WS , e.target.files));
   document.getElementById('exInput') ?.addEventListener('change', e=>uploadManyAt(PATH.EX , e.target.files));
@@ -861,7 +851,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('ithaaInput')?.addEventListener('change', e=>uploadManyAt(PATH.ITH, e.target.files));
   document.getElementById('cvInput')   ?.addEventListener('change', e=>uploadManyAt(PATH.CV , e.target.files, true));
   document.getElementById('schInput')  ?.addEventListener('change', e=>uploadManyAt(PATH.SCH, e.target.files, true));
-  document.getElementById('planInput') ?.addEventListener('change', e=>uploadManyAt(PATH.PLAN,e.target.files, true));
+
+  /* FIX: planInput must be MULTI; remove single=true so it doesn't delete previous images */
+  // document.getElementById('planInput') ?.addEventListener('change', e=>uploadManyAt(PATH.PLAN,e.target.files, true)); /* FIX: wrong */
+  document.getElementById('planInput')  ?.addEventListener('change', e=>uploadManyAt(PATH.PLAN,e.target.files));       /* FIX: correct (multi, keep existing) */
 
   async function loadAll(){
     const [ws, ex, strat, acts, ithaa, cv, sch, plan, user] = await Promise.all([
@@ -875,10 +868,13 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMixedGrid(ithaaGrid, ithaa);
     renderSingleImage(cvHolder, cv, 'ارفعِي صورة السيرة الذاتية', 'Upload your CV image', '3/4');
     renderSingleImage(schHolder, sch, 'ارفعِي صورة الجدول', 'Upload the schedule image', '3/2');
-    /*renderSingleImage(planHolder, plan, 'ارفعِي صورة توزيع المناهج', 'Upload the plan image', '3/4');*/
-        renderMixedGrid(planGrid, plan); 
+
+    /* FIX: render plan as MULTI grid (not single image) */
+    renderMixedGrid(planGrid, plan); /* FIX: uses #planGrid */
+
     setGuardVisible(!!user);
   }
+  /* FIX: also update guard visibility on auth state change */
   supabaseClient.auth.onAuthStateChange(async ()=>{ loadAll(); });
   loadAll();
 });
