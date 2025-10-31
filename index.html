@@ -875,7 +875,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMixedGrid(ithaaGrid, ithaa);
     renderSingleImage(cvHolder, cv, 'ارفعِي صورة السيرة الذاتية', 'Upload your CV image', '3/4');
     renderSingleImage(schHolder, sch, 'ارفعِي صورة الجدول', 'Upload the schedule image', '3/2');
-    renderSingleImage(planHolder, plan, 'ارفعِي صورة توزيع المناهج', 'Upload the plan image', '3/4');
+    */renderSingleImage(planHolder, plan, 'ارفعِي صورة توزيع المناهج', 'Upload the plan image', '3/4');*/
+        renderMixedGrid(planGrid, plan); 
     setGuardVisible(!!user);
   }
   supabaseClient.auth.onAuthStateChange(async ()=>{ loadAll(); });
