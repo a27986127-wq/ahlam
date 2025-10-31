@@ -536,12 +536,16 @@ section li{list-style:disc inside;line-height:1.9;overflow-wrap:anywhere}
   <div class="section-head">
     <h3 class="title"><i class="fa-solid fa-layer-group"></i><span data-ar>الأنشطة المدرسية</span><span data-en>School Activities</span></h3>
     <div class="actions" data-guard>
-      <label for="actsInput" class="btn icon" title="رفع صور"><i class="fa-solid fa-upload"></i></label>
-      <input id="actsInput" type="file" multiple accept="image/*" hidden>
+      <label for="actsInput" class="btn icon" title="رفع صور/فيديو"><i class="fa-solid fa-upload"></i></label>
+      <!-- FIX: accept only images -->
+      <!-- <input id="actsInput" type="file" multiple accept="image/*" hidden> -->
+      <!-- FIX: accept images + videos -->
+      <input id="actsInput" type="file" multiple accept="image/*,video/*" hidden>
     </div>
   </div>
   <div class="media-grid" id="actsGrid"></div>
 </section>
+
 
 <!-- ===== School Broadcast (videos) ===== -->
 <section id="ithaa" class="reveal">
