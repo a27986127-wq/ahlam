@@ -519,7 +519,7 @@ section li{list-style:disc inside;line-height:1.9;overflow-wrap:anywhere}
   </div>
 </section>
 
-<!-- ===== Semester Plan (single image) ===== -->
+<!-- ===== Semester Plan (single image) ===== 
 <section id="plan" class="reveal">
   <div class="section-head">
     <h3 class="title"><i class="fa-solid fa-diagram-project"></i><span data-ar>توزيع المناهج (الفصل)</span><span data-en>Semester Plan (Subjects)</span></h3>
@@ -533,6 +533,17 @@ section li{list-style:disc inside;line-height:1.9;overflow-wrap:anywhere}
       <span data-ar>ارفعِي صورة توزيع المناهج</span><span data-en>Upload the plan image</span>
     </div>
   </div>
+</section>-->
+  <!-- ===== Semester Plan (MULTI images) ===== -->
+<section id="plan" class="reveal">
+  <div class="section-head">
+    <h3 class="title"><i class="fa-solid fa-diagram-project"></i><span data-ar>توزيع المناهج (صور متعددة)</span><span data-en>Semester Plan (Multiple Images)</span></h3>
+    <div class="actions" data-guard>
+      <label for="planInput" class="btn icon" title="رفع صور التوزيع"><i class="fa-solid fa-upload"></i></label>
+      <input id="planInput" type="file" multiple accept="image/*" hidden>
+    </div>
+  </div>
+  <div class="media-grid" id="planGrid"></div>
 </section>
 
 <!-- ===== School Activities (images) ===== -->
